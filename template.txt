@@ -69,3 +69,12 @@
 						}]
 					}
 				},
+			},
+			"Subnet2Name": {
+			"Description": "Please enter the Subnet-2 here",
+			"Type": "String"
+			},				
+			"Subnet3Name": {
+			"Description": "Please enter the Subnet-3 here",
+			"Type": "String"
+		},				
