@@ -53,4 +53,5 @@
 			"Default": "10.10.0.0/24",
 			"Description": "CIDR block for public subnet",
 			"Type": "String"
-		},		
+		},
+added extra line here
