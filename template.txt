@@ -54,4 +54,3 @@
 			"Description": "CIDR block for public subnet",
 			"Type": "String"
 		},
-added extra line here
