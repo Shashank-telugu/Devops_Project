@@ -69,5 +69,3 @@
 				}]
 			}
 },
-
-added extra line here
