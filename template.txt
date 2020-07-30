@@ -30,33 +30,3 @@
 				"Description": "CIDR block for entire VPC",
 				"Type": "String"
 			},
-			"InternetGateway": {
-				"Type": "AWS::EC2::InternetGateway",
-					"Properties": {
-						"Tags": [{
-							"key": "Name",
-							"Value": "IGW"
-						},
-						{
-							"Key": "CloudFormationStack",
-							"Value": {
-								"Ref": "AWS::Stackid"
-							}
-						}]
-					}
-				},
-	"PublicSubnet1": {
-		"Type": "AWS::EC2::Subnet",
-			"Properties": {
-				"VpcId": {
-				"Ref": "VPC"
-				},
-				"CidrBlock": {
-					"Ref": "publicSubnet1CIDR"
-				},
-				"Tags": [{
-					"Key": "Name",
-					"Value": { "Ref" : "Subnet1Name" }
-				} 
-			} 
-		},
