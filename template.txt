@@ -30,3 +30,19 @@
 				"Description": "CIDR block for entire VPC",
 				"Type": "String"
 			},
+	"VPCNAME":	{
+		"Description": "Please enter the VPC Name here",
+		"Type": "String"
+		},
+		"Subnet1Name": {
+			"Description": "Please enter the Subnet-1 here",
+			"Type": "String"
+			},
+			"Subnet2Name": {
+			"Description": "Please enter the Subnet-2 here",
+			"Type": "String"
+			},				
+			"Subnet3Name": {
+			"Description": "Please enter the Subnet-3 here",
+			"Type": "String"
+		},				
