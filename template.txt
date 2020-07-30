@@ -54,8 +54,7 @@
 			"Description": "CIDR block for public subnet",
 			"Type": "String"
 		},
-<<<<<<< HEAD
-=======
+
 "InternetGateway": {
 		"Type": "AWS::EC2::InternetGateway",
 			"Properties": {
@@ -71,4 +70,3 @@
 				}]
 			}
 },
->>>>>>> gateway
