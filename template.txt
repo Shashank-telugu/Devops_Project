@@ -53,4 +53,19 @@
 			"Default": "10.10.0.0/24",
 			"Description": "CIDR block for public subnet",
 			"Type": "String"
-		},		
+		},
+"InternetGateway": {
+		"Type": "AWS::EC2::InternetGateway",
+			"Properties": {
+				"Tags": [{
+					"key": "Name",
+					"Value": "IGW"
+				},
+				{
+					"Key": "CloudFormationStack",
+					"Value": {
+						"Ref": "AWS::Stackid"
+					}
+				}]
+			}
+},
