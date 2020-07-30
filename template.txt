@@ -1,0 +1,62 @@
+{
+	"AWSTEmplateFormatVersion":"2020-07-09",
+	"Description": "Creates a two-subnet VPC (public w/ NAT gateway and private) (c) 2017 Airll Technology LLC -- licensed under the Apache OpenSource 2.0 license, https://opensource.org/licenses/Apache-2.0",
+	"Metadata": {
+		"AWS::CloudFormation::Interface":{
+			"ParameterGroups":[{
+				"Label":{
+					"default": "VPC configuration parameters"
+					},
+					"Parameters":["VPCCIDR",
+					"PublicSubnetCIDR",
+					"SSHLocation"]
+					}],
+					"ParameterLabels": {
+						"VPCCIDR": { "default": "Enter CIDR of new VPC" },
+						"VPCNAME": { "default": "Enter VPC name here" },
+						"Subnet1Name": { "default": "Enter Subnet1 name here" },
+						"Subnet2Name": { "default": "Enter Subnet2 name here" },
+						"Subnet3Name": { "default": "Enter Subnet3 name here" },
+						"PublicSubnetCIDR": { "default": "Enter CIDR of public subnet" },
+						"SSHLocation": { "default": "Subnet allowed to ssh on TCP to public subnet" 
+					}
+				} 
+			} 
+		},
+			"VPCCIDR": {
+				"AllowedPattern": "^(([0-9][1-9] [0-9]|[0-9]{2}|2[0-4][0-9]|25[0-5])\\.){3}([0-9]|[1-9][0-9]|1[0-9]{2}|2[0-4][0-9]|25[0-5])(\\/(1[6-9]|2[0-8]))$",
+				"ConstraintDescription": "CIDR Block parameter mus be in form x.x.x.x/16-28",
+				"Default": "10.10.0.0/16",
+				"Description": "CIDR block for entire VPC",
+				"Type": "String"
+			},
+			"InternetGateway": {
+				"Type": "AWS::EC2::InternetGateway",
+					"Properties": {
+						"Tags": [{
+							"key": "Name",
+							"Value": "IGW"
+						},
+						{
+							"Key": "CloudFormationStack",
+							"Value": {
+								"Ref": "AWS::Stackid"
+							}
+						}]
+					}
+				},
+	"PublicSubnet1": {
+		"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"VpcId": {
+				"Ref": "VPC"
+				},
+				"CidrBlock": {
+					"Ref": "publicSubnet1CIDR"
+				},
+				"Tags": [{
+					"Key": "Name",
+					"Value": { "Ref" : "Subnet1Name" }
+				} 
+			} 
+		},
