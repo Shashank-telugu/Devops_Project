@@ -30,3 +30,18 @@
 				"Description": "CIDR block for entire VPC",
 				"Type": "String"
 			},
+			"InternetGateway": {
+				"Type": "AWS::EC2::InternetGateway",
+					"Properties": {
+						"Tags": [{
+							"key": "Name",
+							"Value": "IGW"
+						},
+						{
+							"Key": "CloudFormationStack",
+							"Value": {
+								"Ref": "AWS::Stackid"
+							}
+						}]
+					}
+				},
