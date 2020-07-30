@@ -60,3 +60,18 @@
 				} 
 			} 
 		},
+	"PublicSubnet2": {
+		"Type": "AWS::EC2::Subnet",
+			"Properties": {
+				"VpcId": {
+					"Ref": "VPC"
+						},
+				"CidrBlock": {
+					"Ref": "publicSubnet2CIDR"
+					},
+				"Tags": [{
+					"Key": "Name",
+					"Value": { "Ref" : "Subnet2Name" }
+				}
+			} 
+		},
